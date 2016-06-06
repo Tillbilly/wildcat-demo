@@ -1,0 +1,9 @@
+# Pesky vi ~ type files
+*.*~
+
+#Wild cat H2 and index files.
+/wildcat/content/**/*
+
+#deploy temp files
+/wildfly-8.1.1.Final/standalone/tmp/**.*
+
