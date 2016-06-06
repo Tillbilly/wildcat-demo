@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+		xmlns:ui="http://java.sun.com/jsf/facelets" 
+		xmlns:h="http://java.sun.com/jsf/html" 
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html">
+		<h:head>
+			<title>File Upload</title>
+			<style>
+				.ui-widget {
+				    font-size: 12px !important;
+				}
+				.ui-panelgrid .ui-widget-content {
+					border-width: 0px;
+					border-style: none;
+				}
+				.ui-panelgrid td {
+					border-width: 0px;
+					border-style: none;
+				}
+			</style>
+		</h:head>
+		<h:body>
+			<h:form enctype="multipart/form-data" prependId="false">
+				<h:inputHidden id="_c" value="#{_wildcatUpload.context}" />
+				<h:inputHidden id="_b" value="#{_wildcatUpload.binding}" />
+				<h:inputHidden id="_a" value="#{_wildcatUpload.action}" />
+				<p:fileUpload fileUploadListener="#{_wildcatUpload.handleFileUpload}" 
+								update="messages" 
+								oncomplete="top.WindowStack.getOpener().saveInstance('_PUSH');" />
+			    <p:growl id="messages" showDetail="true" />
+			</h:form>
+		</h:body>
+	</f:view>
+</html>

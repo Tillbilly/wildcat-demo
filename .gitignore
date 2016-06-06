@@ -5,5 +5,8 @@
 /wildcat/content/**/*
 
 #deploy temp files
-/wildfly-8.1.1.Final/standalone/tmp/**.*
+/wildfly-8.1.0.Final/standalone/tmp/**/*
+/wildfly-8.1.0.Final/standalone/log/*
+
+
 

@@ -1,0 +1,1 @@
+wildfly-8.1.0.final\bin\standalone.bat

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+		xmlns:ui="http://java.sun.com/jsf/facelets" 
+		xmlns:h="http://java.sun.com/jsf/html" 
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html">
+		<h:head>
+			<title>Content Upload</title>
+			<style>
+				.ui-widget {
+				    font-size: 12px !important;
+				}
+				.ui-panelgrid .ui-widget-content {
+					border-width: 0px;
+					border-style: none;
+				}
+				.ui-panelgrid td {
+					border-width: 0px;
+					border-style: none;
+				}
+			</style>
+		</h:head>
+		<h:body>
+			<h:form enctype="multipart/form-data" prependId="false">
+				<h:inputHidden id="_c" value="#{_wildcatContent.context}" />
+				<h:inputHidden id="_b" value="#{_wildcatContent.binding}" />
+				<h:inputHidden id="_n" value="#{_wildcatContent.contentBinding}" />
+				<p:fileUpload fileUploadListener="#{_wildcatContent.handleFileUpload}" 
+								update="messages"
+								multiple="false"
+								fileLimit="1"
+								fileLimitMessage="Only 1 file allowed.  Remove the existing file first" />
+			    <p:growl id="messages" showDetail="true" />
+			</h:form>
+		</h:body>
+	</f:view>
+</html>

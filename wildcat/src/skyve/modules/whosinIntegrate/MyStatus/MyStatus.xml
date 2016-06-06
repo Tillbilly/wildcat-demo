@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<document name="MyStatus"
+				xmlns="http://www.skyve.org/xml/document"
+				xsi:schemaLocation="http://www.skyve.org/xml/document ../../../schemas/document.xsd"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<singularAlias>My Status</singularAlias>
+	<pluralAlias>My Statuses</pluralAlias>
+	<icon16x16RelativeFilePath>icons/document/status16.png</icon16x16RelativeFilePath>
+	<icon32x32RelativeFilePath>icons/document/status32.png</icon32x32RelativeFilePath>
+	<bizKey>
+		<![CDATA[
+		  	return "My Status";
+		]]>
+	</bizKey>
+	<attributes>
+		<association type="aggregation" name="myStaff">
+			<displayName>My Staff</displayName>
+			<documentName>Staff</documentName>
+		</association>		
+	</attributes>
+	<conditions>
+		<condition name="exists">
+			<![CDATA[getMyStaff()!=null]]>
+		</condition>
+	</conditions>
+</document>
